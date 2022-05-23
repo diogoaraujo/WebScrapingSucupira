@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-response = requests.get('https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/envioColeta/dadosFotoEnvioColeta.jsf;jsessionid=HTARxpwFZdk8JeCHc7Mg7WCu.sucupira-204https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/envioColeta/dadosFotoEnvioColeta.jsf;jsessionid=HTARxpwFZdk8JeCHc7Mg7WCu.sucupira-204')
+response = requests.get('https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/envioColeta/dadosFotoEnvioColeta.jsf;jsessionid=HTARxpwFZdk8JeCHc7Mg7WCu.sucupira-204')
 content = response.content
 
 ''' print ('Status Code' , response.status_code)
