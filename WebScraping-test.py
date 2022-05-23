@@ -14,9 +14,14 @@ option.headless = True
 #driver = webdriver.Firefox(executable_path=r'C:\usr\local\bin\geckodriver.exe')
 driver = webdriver.Firefox()
 driver.get(url)
-driver.quit()
+
+time.sleep(10)
+
+
 
 #2. Parsear o conteúdo HTML - BeautfulSoup
 #3. Estruturar o conteúdo em um Data Frame - Pandas
 #4. Transformar os Dados em um Dicionário de dados próprio
+driver.quit()
+
 #5. Converter e salvar em um arquivo JSON
