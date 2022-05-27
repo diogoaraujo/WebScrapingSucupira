@@ -1,25 +1,27 @@
+import time
 import requests
+import pandas as pd
 from bs4 import BeautifulSoup
-response = requests.get('https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/envioColeta/dadosFotoEnvioColeta.jsf;jsessionid=HTARxpwFZdk8JeCHc7Mg7WCu.sucupira-204')
-content = response.content
+from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
+import json
 
-''' print ('Status Code' , response.status_code)
-print ('Header')
-print (response.headers) '''
+#1. Pegar conteúdo HTML a partir da URL
+url = "http://sucupira.capes.gov.br/sucupira/public/consultas/coleta/envioColeta/dadosFotoEnvioColeta.jsf;jsessionid=HTARxpwFZdk8JeCHc7Mg7WCu.sucupira-204"
 
-#print('\n  Content')
-#print(response.content)
+option = Options()
+option.headless = True
+#driver = webdriver.Firefox(executable_path=r'C:\usr\local\bin\geckodriver.exe')
+driver = webdriver.Firefox()
+driver.get(url)
 
-site = BeautifulSoup(content, 'html.parser')
+time.sleep(10)
 
-#Dados do Envio
-DadosDoEnvio=site.find('div',attrs={'class': 'conteudo'})
-#Calendario
-Calendario=DadosDoEnvio.find('div', attrs={'class': 'input-group'})
-#Instituição de Ensino Superior
-# Instituicao= DadosDoEnvio.find()
 
-# print(DadosDoEnvio.find())
-print("-------------------------------")
-print(DadosDoEnvio.find())
 
+#2. Parsear o conteúdo HTML - BeautfulSoup
+#3. Estruturar o conteúdo em um Data Frame - Pandas
+#4. Transformar os Dados em um Dicionário de dados próprio
+driver.quit()
+
+#5. Converter e salvar em um arquivo JSON
